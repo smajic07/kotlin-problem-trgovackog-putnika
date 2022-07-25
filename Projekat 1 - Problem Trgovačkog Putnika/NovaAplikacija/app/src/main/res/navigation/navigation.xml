@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/id_listaGradova_fragment">
+
+    <fragment
+        android:id="@+id/id_listaGradova_fragment"
+        android:name="com.example.novaaplikacija.ListaGradovaFragment"
+        android:label="@string/menu_listaGradova">
+
+        <action
+            android:id="@+id/action_id_listaGradova_fragment_to_detaljiGradaFragment"
+            app:destination="@id/id_detaljiGrada_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/id_oAplikaciji_fragment"
+        android:name="com.example.novaaplikacija.OAplikacijiFragment"
+        android:label="@string/menu_oAplikaciji" />
+
+    <fragment
+        android:id="@+id/id_detaljiGrada_fragment"
+        android:name="com.example.novaaplikacija.DetaljiGradaFragment"
+        android:label="@string/detaljiGrada"
+        tools:layout="@layout/fragment_detalji_grada">
+
+        <argument
+            android:name="grad"
+            app:argType="com.example.novaaplikacija.Grad" />
+
+        <argument
+            android:name="gradovi"
+            app:argType="com.example.novaaplikacija.Grad[]" />
+
+        <action
+            android:id="@+id/action_id_detaljiGrada_fragment_to_id_gradNaMapi_fragment"
+            app:destination="@id/id_gradNaMapi_fragment" />
+
+        <action
+            android:id="@+id/action_id_detaljiGrada_fragment_to_id_algoritam_fragment"
+            app:destination="@id/id_algoritam_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/id_gradNaMapi_fragment"
+        android:name="com.example.novaaplikacija.GradNaMapiFragment"
+        android:label="@string/gradNaMapi"
+        tools:layout="@layout/fragment_grad_na_mapi">
+
+        <argument
+            android:name="grad"
+            app:argType="com.example.novaaplikacija.Grad" />
+
+        <argument
+            android:name="gradovi"
+            app:argType="com.example.novaaplikacija.Grad[]" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/id_algoritam_fragment"
+        android:name="com.example.novaaplikacija.AlgoritamFragment"
+        android:label="@string/algoritam"
+        tools:layout="@layout/fragment_algoritam">
+
+        <argument
+            android:name="grad"
+            app:argType="com.example.novaaplikacija.Grad" />
+
+        <argument
+            android:name="gradovi"
+            app:argType="com.example.novaaplikacija.Grad[]" />
+
+        <action
+            android:id="@+id/action_id_algoritam_fragment_to_najkracaRutaFragment"
+            app:destination="@id/id_najkracaRuta_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/id_dodajGrad_fragment"
+        android:name="com.example.novaaplikacija.DodajGradFragment"
+        android:label="@string/menu_dodajGrad">
+
+        <action
+            android:id="@+id/action_id_dodajGrad_fragment_to_id_listaGradova_fragment"
+            app:destination="@id/id_listaGradova_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/id_najkracaRuta_fragment"
+        android:name="com.example.novaaplikacija.NajkracaRutaFragment"
+        android:label="@string/najkracaRuta"
+        tools:layout="@layout/fragment_najkraca_ruta">
+
+        <argument
+            android:name="grad"
+            app:argType="com.example.novaaplikacija.Grad" />
+
+        <argument
+            android:name="gradovi"
+            app:argType="com.example.novaaplikacija.Grad[]" />
+
+    </fragment>
+
+</navigation>

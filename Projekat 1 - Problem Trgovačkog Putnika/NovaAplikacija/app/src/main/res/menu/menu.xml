@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/id_listaGradova_fragment"
+        android:checked="true"
+        android:checkable="true"
+        android:icon="@drawable/ic_baseline_list_24"
+        android:title="@string/menu_listaGradova" />
+
+    <item android:id="@+id/id_dodajGrad_fragment"
+        android:checkable="true"
+        android:icon="@drawable/ic_baseline_add_circle_24"
+        android:title="@string/menu_dodajGrad" />
+
+    <item android:id="@+id/id_oAplikaciji_fragment"
+        android:checkable="true"
+        android:icon="@drawable/ic_baseline_info_24"
+        android:title="@string/menu_oAplikaciji" />
+
+</menu>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:id="@+id/fragment_detalji_grada_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/fragment_detalji_grada_nazivLabela"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/roboto"
+                android:padding="@dimen/city_padding"
+                android:text="@string/gradLabela"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/fragment_detalji_grada_naziv"
+                app:layout_constraintHorizontal_bias="0.166"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fragment_detalji_grada_naziv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/roboto_bold"
+                android:padding="@dimen/city_padding"
+                android:text="@string/latitudaLabela"
+                android:textColor="@color/teal_700"
+                android:textSize="@dimen/cityTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/fragment_detalji_grada_drzavaLabela"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/roboto"
+                android:padding="@dimen/city_padding"
+                android:text="@string/drzavaLabela"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/fragment_detalji_grada_drzava"
+                app:layout_constraintHorizontal_bias="0.178"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_detalji_grada_nazivLabela" />
+
+            <TextView
+                android:id="@+id/fragment_detalji_grada_drzava"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_bold"
+                android:padding="@dimen/city_padding"
+                android:text="@string/latitudaLabela"
+                android:textColor="@color/teal_700"
+                android:textSize="@dimen/cityTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_detalji_grada_naziv" />
+
+            <TextView
+                android:id="@+id/fragment_detalji_grada_latitudaLabela"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/roboto"
+                android:padding="@dimen/city_padding"
+                android:text="@string/latitudaLabela"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/fragment_detalji_grada_latituda"
+                app:layout_constraintHorizontal_bias="0.185"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_detalji_grada_drzavaLabela" />
+
+            <TextView
+                android:id="@+id/fragment_detalji_grada_latituda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_bold"
+                android:padding="@dimen/city_padding"
+                android:text="@string/latitudaLabela"
+                android:textColor="@color/teal_700"
+                android:textSize="@dimen/cityTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_detalji_grada_drzava" />
+
+            <TextView
+                android:id="@+id/fragment_detalji_grada_longitudaLabela"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/roboto"
+                android:padding="@dimen/city_padding"
+                android:text="@string/longitudaLabela"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/fragment_detalji_grada_longituda"
+                app:layout_constraintHorizontal_bias="0.196"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_detalji_grada_latitudaLabela" />
+
+            <TextView
+                android:id="@+id/fragment_detalji_grada_longituda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto_bold"
+                android:padding="@dimen/city_padding"
+                android:text="@string/latitudaLabela"
+                android:textColor="@color/teal_700"
+                android:textSize="@dimen/cityTextSize"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_detalji_grada_latituda" />
+
+            <TextView
+                android:id="@+id/fragment_detalji_grada_opisLabela"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/roboto"
+                android:padding="@dimen/city_padding"
+                android:text="@string/opisLabela"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_detalji_grada_longituda" />
+
+            <TextView
+                android:id="@+id/fragment_detalji_grada_opis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:padding="@dimen/city_padding"
+                android:text="@string/latitudaLabela"
+                android:textAlignment="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.499"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_detalji_grada_opisLabela" />
+
+            <Button
+                android:id="@+id/dugmePrikaziNaMapi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/common_google_signin_btn_icon_light"
+                android:fontFamily="@font/roboto"
+                android:text="@string/prikaziNaMapi"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/dugmeIdiNaAlgoritamFragment"
+                app:layout_constraintHorizontal_bias="0.501"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_detalji_grada_opis"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <Button
+                android:id="@+id/dugmeIdiNaAlgoritamFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="#E91E63"
+                android:fontFamily="@font/roboto"
+                android:text="@string/idiNaAlgoritam"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.78"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fragment_detalji_grada_opis"
+                app:layout_constraintVertical_bias="1.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

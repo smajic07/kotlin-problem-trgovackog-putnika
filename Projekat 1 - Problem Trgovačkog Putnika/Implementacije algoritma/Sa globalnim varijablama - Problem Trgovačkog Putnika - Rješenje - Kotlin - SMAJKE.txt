@@ -1,0 +1,130 @@
+class Grad(naziv: String, lat: Double, lng: Double) {
+    val naziv = naziv
+    val lat = lat
+    val lng = lng
+}
+
+fun udaljenostIzdmedjuDvaGrada(A: Grad, B: Grad): Double {
+    
+    val R = 6371e3;
+    
+    val f1 = A.lat * Math.PI/180;
+    val f2 = B.lat * Math.PI/180;
+    val w = (B.lat-A.lat) * Math.PI/180;
+    val l = (B.lng-A.lng) * Math.PI/180;
+    
+    val a = Math.sin(w/2) * Math.sin(w/2) + Math.cos(f1) * Math.cos(f2) * Math.sin(l/2) * Math.sin(l/2);
+    val c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    val d = R * c;
+    
+    return d; // u metrima
+    
+}
+
+var najmanjaUkupnaUdaljenost = 10000000.0;
+var gradoviNajkracegPuta = mutableListOf<Grad>();
+var i = 0;
+var grad = Grad("Sarajevo", 43.8667, 18.4167)
+
+fun pomocnaZaPermutacije(permutacije: MutableList<MutableList<Grad>>, permutacija: MutableList<Grad>, gradovi: MutableList<Grad>): Int {
+    
+    // ovdje imam novu permutaciju, gdje je mogu ispitati da li je optimalnija od prethodne
+    if (permutacija.size == gradovi.size){
+	            
+        println("START: Provjeravam permutaciju " + (i+1));
+
+        ispisiPermutaciju(grad, permutacija);
+
+        var trenutnaUdaljenost = 0.0   
+        var udaljenost = udaljenostIzdmedjuDvaGrada(grad, permutacija[0]);
+        trenutnaUdaljenost += udaljenost;
+
+        println(grad.naziv + " - " + permutacija[0].naziv + ": " + udaljenost);
+
+        for(j in 0..(permutacija.size-2)){
+            udaljenost = udaljenostIzdmedjuDvaGrada(permutacija[j], permutacija[j+1]);
+            println(permutacija[j].naziv + " - " + permutacija[j+1].naziv + ": " + udaljenost);
+            trenutnaUdaljenost += udaljenost;
+        }
+
+        udaljenost = udaljenostIzdmedjuDvaGrada(permutacija[permutacija.size-1], grad);
+        println(permutacija[permutacija.size-1].naziv + " - " + grad.naziv + ": " + udaljenost);
+        trenutnaUdaljenost += udaljenost;
+
+        println("END: Provjerena permutacija " + (i+1));
+        println("Ukupna udaljenost navedenog puta je: " + trenutnaUdaljenost + " m");
+        println()
+
+        if(najmanjaUkupnaUdaljenost > trenutnaUdaljenost){
+            najmanjaUkupnaUdaljenost = trenutnaUdaljenost;
+            gradoviNajkracegPuta = permutacija;
+        }
+
+        i++;
+            
+        permutacije.add(permutacija)
+        return permutacije.size
+    
+    }
+    
+    for(e in gradovi){
+        var ima = false;
+        for(e2 in permutacija){
+            if(e == e2){
+                ima = true;
+                break;
+            }
+        }
+        var novaPermutacija = mutableListOf<Grad>()
+        novaPermutacija.addAll(permutacija)
+        novaPermutacija.add(e)
+        if(!ima) pomocnaZaPermutacije(permutacije, novaPermutacija, gradovi)
+    }
+    
+    return -1
+    
+}
+
+fun dajSvePermutacijeGradova(gradovi: MutableList<Grad>): MutableList<MutableList<Grad>> {
+    var permutacije = mutableListOf<MutableList<Grad>>()
+    pomocnaZaPermutacije(permutacije, mutableListOf<Grad>(), gradovi)
+    return permutacije
+}
+
+fun ispisiPermutaciju(grad: Grad, gradovi: MutableList<Grad>){
+    print("Gradovi permutacije su: ")
+    print(grad.naziv + " - ");
+    for(i in 0..(gradovi.size-1)){
+        print(gradovi[i].naziv + " - ")
+    }
+    print(grad.naziv);
+    println()
+}
+
+fun problemTrgovackogPutnika(gradovi: MutableList<Grad>) {
+    var permutacije = dajSvePermutacijeGradova(gradovi);
+}
+
+fun main() {
+    
+    var gradovi = mutableListOf<Grad>()
+    
+    gradovi.add(Grad("Kakanj", 44.1331, 18.1229))
+    gradovi.add(Grad("Tuzla", 44.5381, 18.6761))
+    gradovi.add(Grad("Zenica", 44.2039, 17.9078))
+    gradovi.add(Grad("Travnik", 44.2333, 17.6667))
+    gradovi.add(Grad("Gradačac", 44.8785, 18.4276))
+    //gradovi.add(Grad("Mostar", 43.3494, 17.8125))
+   
+	problemTrgovackogPutnika(gradovi)
+    
+    println()
+    println("Dužina najkraćeg puta je: " + najmanjaUkupnaUdaljenost + " m");
+    println("Najkraći put sadrži sljedeće gradove: ");
+    print(grad.naziv + " - ");
+    for(i in 0..(gradoviNajkracegPuta.size-1)){
+        print(gradoviNajkracegPuta[i].naziv + " - ");
+    }
+    print(grad.naziv);
+    
+}

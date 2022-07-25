@@ -1,0 +1,125 @@
+let grad = 
+  {
+    "city": "Sarajevo", 
+    "lat": "43.8667", 
+    "lng": "18.4167", 
+    "country": "Bosnia And Herzegovina", 
+    "iso2": "BA", 
+    "admin_name": "Bosnia and Herzegovina, Federation of", 
+    "capital": "primary", 
+    "population": "275524", 
+    "population_proper": "275524"
+  };
+let gradovi = 
+[
+  {
+    "city": "Kakanj", 
+    "lat": "44.1331", 
+    "lng": "18.1229", 
+    "country": "Bosnia And Herzegovina", 
+    "iso2": "BA", 
+    "admin_name": "Bosnia and Herzegovina, Federation of", 
+    "capital": "minor", 
+    "population": "", 
+    "population_proper": ""
+  }, 
+  {
+    "city": "Tuzla", 
+    "lat": "44.5381", 
+    "lng": "18.6761", 
+    "country": "Bosnia And Herzegovina", 
+    "iso2": "BA", 
+    "admin_name": "Bosnia and Herzegovina, Federation of", 
+    "capital": "minor", 
+    "population": "110979", 
+    "population_proper": "110979"
+  }, 
+  {
+    "city": "Zenica", 
+    "lat": "44.2039", 
+    "lng": "17.9078", 
+    "country": "Bosnia And Herzegovina", 
+    "iso2": "BA", 
+    "admin_name": "Bosnia and Herzegovina, Federation of", 
+    "capital": "minor", 
+    "population": "70553", 
+    "population_proper": "70553"
+  }
+];
+
+function udaljenost(A, B){
+    
+    const R = 6371e3; // metres
+    
+    const f1 = A.lat * Math.PI/180; // φ, λ in radians
+    const f2 = B.lat * Math.PI/180;
+    
+    const w = (B.lat-A.lat) * Math.PI/180;
+    const l = (B.lng-A.lng) * Math.PI/180;
+    
+    const a = Math.sin(w/2) * Math.sin(w/2) +
+              Math.cos(f1) * Math.cos(f2) *
+              Math.sin(l/2) * Math.sin(l/2);
+              
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    
+    const d = R * c; // u metrima
+    
+    return d;
+}
+
+const dajPermutacije = (arr = []) => {
+   let res = []
+   const helper = (arr2) => {
+      if (arr2.length==arr.length)
+      return res.push(arr2)
+      for(let e of arr)
+      if (!arr2.includes(e))
+      helper([...arr2, e])
+   };
+   helper([])
+   return res;
+};
+
+function najkraciPut(grad, gradovi){
+    
+    let permutacije = dajPermutacije(gradovi);
+    //console.log(permutacije);
+    
+    let najmanjaUdaljenost = 10000000;
+    let najkraciPut = permutacije[0];
+    
+    for(let i=0; i<permutacije.length; i++){
+    
+        let trenutnaUdaljenost = udaljenost(grad, permutacije[i][0]);
+        console.log(grad.city + " - " + permutacije[i][0].city + " " + trenutnaUdaljenost);
+        
+        for(let j=0; j<permutacije[i].length-1; j++){
+            let udaljenosttt = udaljenost(permutacije[i][j], permutacije[i][j+1]);
+            console.log(permutacije[i][j].city + " - " + permutacije[i][j+1].city + " " + udaljenosttt);
+            trenutnaUdaljenost += udaljenosttt;
+        }
+        
+        udaljenosttt = udaljenost(permutacije[i][permutacije[i].length-1], grad);
+        console.log(permutacije[i][permutacije[i].length-1].city + " - " + grad.city + " " + udaljenosttt);
+        trenutnaUdaljenost += udaljenosttt;
+        
+        /*
+        console.log("/////////////////////////////////////////");
+        console.log(trenutnaUdaljenost);
+        console.log(permutacije[i]);
+        console.log("/////////////////////////////////////////");
+        console.log();
+        */
+        
+        if(najmanjaUdaljenost > trenutnaUdaljenost){
+            najmanjaUdaljenost = trenutnaUdaljenost;
+            najkraciPut = permutacije[i];
+        }
+        
+    }
+    console.log("NAJKRAĆI PUT JE: " + najmanjaUdaljenost);
+    console.log(najkraciPut);
+}
+
+najkraciPut(grad, gradovi);

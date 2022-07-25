@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Salesman traveler</string>
+    <string name="otvori">Open</string>
+    <string name="zatvori">Close</string>
+    <string name="kratakOpisAplikacije">The problem of the traveling salesman, the logistical problem of everyday life, is solved in graph theory.
+        It is similar to the problem of the Chinese postman. It is solved by trying to find a walk that will pass at
+        least once through each vertex on the graph and return to the initial vertex, doing so in the shortest possible way,
+        using a directed or undirected graph.\nThe distances between the peaks can also be specified, so it is required
+        that the total distance traveled is the smallest.
+    </string>
+    <string name="detaljanOpisAplikacije">
+        University of Sarajevo
+        \nFaculty: Faculty of Science
+        \nSubject: Mobile Application Development
+        \nProfessor: prof. Dr. Elemedin Selmanović
+        \nAssistant: mr. Eldina Delalić
+
+        \n\nThe problem of the traveling salesman, the logistical problem of everyday life, is solved in graph theory.
+        It is similar to the problem of the Chinese postman. It is solved by trying to find a walk that will pass at
+        least once through each vertex on the graph and return to the initial vertex, doing so in the shortest possible way,
+        using a directed or undirected graph.\nThe distances between the peaks can also be specified, so it is required
+        that the total distance traveled is the smallest. It is a comparison with a postman moving through the streets
+        (in the mathematical model it is a graph) and has the task of delivering shipments to each house (the tops of the graph in question),
+        in the shortest time and return to the post office (starting point). The postman wants to spend as little time,
+        effort and money as possible to complete his task, using the shortest route.
+
+        \n\nThis application was developed by:
+        \nEdin Smajić &amp; Armin Hadrović
+    </string>
+    <string name="autori">developed by: E. Smajić &amp; A. Hadrović</string>
+
+    <string name="nastavi">Continue</string>
+    <string name="gradLabela">City:</string>
+    <string name="drzavaLabela">Country:</string>
+    <string name="latitudaLabela">Latitude:</string>
+    <string name="longitudaLabela">Longitude:</string>
+    <string name="opisLabela"><u>Description</u>:</string>
+    <string name="prikaziNaMapi">Show on map</string>
+    <string name="idiNaAlgoritam">Go to algorithm</string>
+
+    <string name="dodajGrad">Add a city</string>
+    <string name="hintGrad">City</string>
+    <string name="hintDrzava">Country</string>
+    <string name="hintLatituda">Latitude</string>
+    <string name="hintLongituda">Longitude</string>
+    <string name="hintOpis">City description</string>
+
+    <string name="opis_uvodne_slike">A picture that represents the problem of traveling salesman</string>
+    <string name="menu_oAplikaciji">About app</string>
+    <string name="menu_dodajGrad">Add a city</string>
+    <string name="menu_listaGradova">List of cities</string>
+    <string name="nazivAplikacije">Salesman traveler</string>
+
+    <string name="pokreniAlgoritam">Start the algorithm</string>
+    <string name="prikaziRutu">Show route</string>
+    <string name="pokreniteAlgoritamIspod">Start the algorithm below</string>
+    <string name="podijeli">Share</string>
+
+
+    <string name="detaljiGrada">City details</string>
+    <string name="algoritam">Algorithm</string>
+    <string name="gradNaMapi">City in the map</string>
+    <string name="najkracaRuta">Shortest route</string>
+
+    <string name="polazniGrad">Starting city</string>
+
+</resources>

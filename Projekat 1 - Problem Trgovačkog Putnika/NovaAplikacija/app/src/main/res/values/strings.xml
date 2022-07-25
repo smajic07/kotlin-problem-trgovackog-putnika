@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Trgovački putnik</string>
+    <string name="otvori">Otvori</string>
+    <string name="zatvori">Zatvori</string>
+    <string name="kratakOpisAplikacije">Problem trgovačkog putnika, logistički problem iz svakodnevnog života,
+        rješava se u teoriji grafova. Sličan je problemu kineskog poštara. Rješava ga se tako što se
+        pokušava naći šetnju kojom će se barem jednom proći kroz svaki vrh na grafu te se vratiti na
+        početni vrh, učinivši to na najkraći mogući način, koristeći se usmjerenim ili neusmjerenim
+        grafom.\nMogu biti zadane i udaljenosti među vrhovima, pa se traži i da je ukupna prijeđena
+        udaljenost najmanja.
+    </string>
+    <string name="detaljanOpisAplikacije">
+        Univerzitet u Sarajevu
+        \nFakultet: Prirodno-matematički fakultet
+        \nPredmet: Razvoj mobilnih aplikacija
+        \nProfesor: prof. dr. Elemedin Selmanović
+        \nAsistent: mr. Eldina Delalić
+
+        \n\nProblem trgovačkog putnika, logistički problem iz svakodnevnog života,
+        rješava se u teoriji grafova. Sličan je problemu kineskog poštara. Rješava ga se tako što se
+        pokušava naći šetnju kojom će se barem jednom proći kroz svaki vrh na grafu te se vratiti na
+        početni vrh, učinivši to na najkraći mogući način, koristeći se usmjerenim ili neusmjerenim
+        grafom.\nMogu biti zadane i udaljenosti među vrhovima, pa se traži i da je ukupna prijeđena
+        udaljenost najmanja. Usporedba je s poštarom koji se kreće ulicama (u matematičkom modelu
+        to je graf) te ima zadaću dostaviti pošiljke u svaku kuću (vrhovi dotičnog grafa), u najkraćem
+        vremenu te se vratiti u poštu (polaznu točku). Poštar želi potrošiti što manje vremena, truda
+        i novca da bi izvršio svoju zadaću, upotrijebivši najkraću rutu.
+
+        \n\nAplikaciju razvili:
+        \nEdin Smajić &amp; Armin Hadrović
+    </string>
+    <string name="autori">Aplikaciju razvili: E. Smajić &amp; A. Hadrović</string>
+
+    <string name="opis_uvodne_slike">Slika koja predstavlja problem trgovačkog putnika</string>
+    <string name="menu_oAplikaciji">O aplikaciji</string>
+    <string name="menu_dodajGrad">Dodaj grad</string>
+    <string name="menu_listaGradova">Lista gradova</string>
+    <string name="nazivAplikacije">Trgovački putnik</string>
+
+    <string name="nastavi">Nastavi</string>
+    <string name="gradLabela">Grad:</string>
+    <string name="drzavaLabela">Država:</string>
+    <string name="latitudaLabela">Latituda:</string>
+    <string name="longitudaLabela">Longituda:</string>
+    <string name="opisLabela"><u>Opis grada</u>:</string>
+    <string name="prikaziNaMapi">Prikaži na mapi</string>
+    <string name="idiNaAlgoritam">Idi na algoritam</string>
+    <string name="dodajGrad">Dodaj grad</string>
+    <string name="hintGrad">Grad</string>
+    <string name="hintDrzava">Država</string>
+    <string name="hintLatituda">Latituda</string>
+    <string name="hintLongituda">Longituda</string>
+    <string name="hintOpis">Opis grada</string>
+    <string name="pokreniAlgoritam">Pokreni algoritam</string>
+    <string name="prikaziRutu">Prikaži rutu</string>
+    <string name="pokreniteAlgoritamIspod">Pokrenite algoritam ispod</string>
+    <string name="podijeli">Podijeli</string>
+
+    <string name="detaljiGrada">Detalji grada</string>
+    <string name="algoritam">Algoritam</string>
+    <string name="gradNaMapi">Grad na mapi</string>
+    <string name="najkracaRuta">Najkraća ruta</string>
+
+    <string name="polazniGrad">Polazni grad</string>
+
+</resources>
